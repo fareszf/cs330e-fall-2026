@@ -1,0 +1,46 @@
+﻿Setting Up for Classwork
+
+1. Create a Folder:
+
+- Make a folder named "classwork" on Desktop or My Documents.
+
+2. Choose Tools:
+
+- Text Editor: Use NotePad++ (Windows) or VIM (Mac).
+- Command-Line Interpreter: Use Git Bash (Windows) or Terminal (Mac).
+
+3. Set Up Git Bash:
+
+- Set Git Bash to open in the "classwork" folder.
+- Get a Unix basic commands cheat sheet.
+
+4. Update System Path (Windows):
+- Add necessary application paths to the system environment variable:
+  Control Panel > System and Security > System > Advanced System Settings >   Advanced > Environment Variables.
+
+5. make Build Tools:
+
+- "make": A Unix/Linux building tool.
+- "make" is available on Mac OS but need to be installed for Windows.
+  To install "make" on Windows, go to Class webpage > "start here"
+
+6. Running Executables (Windows):
+
+- To run "file.exe" located at "C:\Documents":
+  From Directory: cd C:\Documents, then run .\file.exe.
+  Full Path: Run C:\Documents\file.exe from any directory.
+  Add to PATH: Add "C:\Documents" to PATH to run file.exe from anywhere.
+
+7. SSH and FTP on Windows:
+
+- WinSCP: Use for file transfer.
+- PuTTY: Connect using hostname UTHOSTNAMENAME.cs.utexas.edu. Enter your    
+  UTCS password when prompted (cursor won't move).
+
+8. make Command:
+   Example: 
+   Target: dependencies
+      actions to generate Target 
+
+- Whitespace Sensitive.
+- Automatic Rebuild: make will re-run "Target" if dependencies change.
