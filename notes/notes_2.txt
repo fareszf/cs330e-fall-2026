@@ -1,0 +1,40 @@
+Comments in Python
+A one-line comment starts with: #
+
+Example:
+# This is a comment.
+
+Triple quotes can be used for multi-line strings or docstrings, but they are not the same as regular comments.
+
+Collatz Conjecture
+The Collatz process starts with a positive integer.
+If the number is even, divide it by 2.
+If the number is odd, multiply it by 3 and add 1.
+Repeat until reaching 1.
+
+Example sequence starting from 5:
+5 → 16 → 8 → 4 → 2 → 1
+
+Cycle length counts the number of terms in the sequence, including the starting number and 1.
+So the cycle length of 5 is 6.
+The cycle length of 10 is 7.
+
+Assertions
+
+Assertions are executable checks used to document assumptions that should always be true if the program is correct.
+They are useful for detecting programmer errors during development.
+When an assertion fails, Python raises an AssertionError and stops the program. The traceback shows useful debugging information, such as:
+
+- The filename
+- The function name
+- The line number
+- The expression where the failure occurred
+
+Important points about assertions:
+
+- Running Python with -O turns off all assert statements.
+- Assertions should not be used for normal testing; use unittest instead.
+- Assertions should not be used for handling user errors; use exceptions instead.
+- Assertions are best used to check internal assumptions that should never be false in correct code.
+
+When testing a program, you usually do not want the whole program to stop after one failed check. You want all tests to run and report results. Therefore, unit testing is better for testing code.
