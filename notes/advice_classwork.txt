@@ -6,7 +6,7 @@
 
 2. Choose Tools:
 
-- Text Editor: Use NotePad++ (Windows) or VIM (Mac).
+- Text Editor: Use Notepad++, VS Code, or another text editor.
 - Command-Line Interpreter: Use Git Bash (Windows) or Terminal (Mac).
 
 3. Set Up Git Bash:
