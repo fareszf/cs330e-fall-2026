@@ -1,0 +1,38 @@
+Factorial.py and FactorialT.py
+
+Factorial.py
+
+factorial_recursion
+
+* Make the recursive call first, and then use its return value to calculate the result.
+* The calculations are completed as the recursive calls return.
+* Each call requires its own stack frame, resulting in O(n) space complexity.
+
+factorial_tail_recursion
+
+* Python allows a function to be defined inside another function.
+* The computation is performed before the recursive call, and the updated result is passed as an argument to the next call.
+* The recursive call is the final operation performed by the function (this is what makes it tail recursive).
+* Some programming languages optimize tail recursion by transforming it into an iterative loop and reusing stack frames.
+* Python does not perform tail-call optimization.
+* Therefore, Python creates a new stack frame for each recursive call, and sufficiently deep recursion can raise a RecursionError.
+* Although the procedure is recursive, the algorithm's state progresses in a manner similar to an iterative process by carrying the accumulated result forward.
+
+
+FactorialT.py
+
+Using self.subTest()
+
+* self.subTest() treats each set of test data as a separate subtest.
+* If one subtest fails, the remaining subtests in the same test method will still run.
+* Without self.subTest(), the test method normally stops when the first assertion fails.
+
+Using timeit
+
+* The timeit() function accepts the statement to execute, setup code, and the number of executions.
+* f.**name** obtains the name of the current function.
+* f.**name** + "(100)" creates a call to the function with 100 as its argument.
+* "from **main** import " + f.**name** imports the function into the timing environment.
+* number=1000 specifies that the function should run 1,000 times.
+* timeit() returns the total execution time in seconds.
+* Multiply the result by 1,000 to convert seconds to milliseconds.
