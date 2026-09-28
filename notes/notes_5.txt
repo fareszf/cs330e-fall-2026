@@ -1,0 +1,35 @@
+Types, Base, Instance, Subclasses
+---------------------------------
+
+- Everything in Python is an object
+  * This means everything is an instance of a class.
+  * Example: 123 is an instance of int, "abc" is an instance of str.
+
+- Classes themselves are objects
+  * int and str are objects, so they must also be instances.
+  * They are instances of type.
+
+- Each class has two important pointers
+  * A pointer to its type.
+    > Because Foo is an instance of type, Foo.__init__ determines what happens 
+      when the class is created.
+  * A pointer to its base class (where it inherits from).
+    > Because Foo inherits from object, invoking a method on Foo first looks 
+      in Foo; if not found, Python looks in object.
+
+- Key Results
+  * Every class in Python is an instance of type.
+    > You can use type(x) to identify the type of an instantiated object x.
+  * object is the base of every class.
+    > object is an instance of type, and type itself inherits from object.
+    > Therefore, every class is also an instance of object.
+  * An instance of a derived class is also considered an instance of its base class.
+    > Example 1: If type is an instance of type and type is a subclass of object,
+      then type (a derived class) is also an instance of object.
+    > Example 2: If type is an instance of type and type is a subclass of object,
+      then type is also an instance of object.
+
+- Instance and Subclass Checking
+  * Two important built-in functions:
+    > isinstance(obj, class)   – checks if obj is an instance of class (or any superclass).
+    > issubclass(subclass, superclass) – checks if subclass is derived from superclass.
