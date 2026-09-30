@@ -1,0 +1,102 @@
+Mutables vs. Immutables:
+----------------------
+Mutables are objects that can be changed after creation. Examples include list, set, and dict.
+Immutables are objects that cannot be changed after creation, and attempts to modify them may result 
+in creating a new object. Examples include tuples, frozensets, str, int, etc.
+
++ vs += 
+-------
+`a += b` is the same as `a = a + b` only if `a` and `b` are immutable. Otherwise, `+` returns a newly allocated object, while `+=` modifies the object in place.
+
+- `+` always returns a newly allocated object.
+- `+=` should (but doesn’t have to) modify the object in place if it’s mutable.
+
+Example:
+----------
+>>> x = 10
+>>> y = 10
+>>> id(x)
+1582465424
+>>> id(y)
+1582465424
+>>> x += 1
+>>> id(x)
+1582465456
+
+>>> x = 10
+>>> y = 10
+>>> id(x)
+1582465424
+>>> id(y)
+1582465424
+>>> x = x + 1
+>>> id(x)
+1582465456
+
+>>> x = [2, 3]
+>>> id(x)
+2194172870024
+>>> x += [1]
+>>> x
+[2, 3, 1]
+>>> id(x)
+2194172870024
+
+>>> x = [2, 3]
+>>> id(x)
+2194172879624
+>>> x = x + [1]
+>>> x
+[2, 3, 1]
+>>> id(x)
+2194172879560
+
+List Operations:
+- `list += list` or `tuple`
+- `list + list`
+
+Indexables:
+---------
+If an iterable is indexable, you can access its elements via an index, and the elements are finite.
+If an iterable is not indexable, it might be infinite, and you cannot access its elements via an index. 
+For example, if x is not indexable, to iterate through its elements, you may either do `for i in x:` or use `p = iter(x); val = next(p); ...`
+
+Exception Handling:
+-------------
+Why do we need exception handling?
+Errors in a Python module produce a traceback error and stop the execution of the module. Such errors are useful for developers but not for users. Anticipate sections of your code that may cause an error and place them inside try-except blocks. If the code in the try section works, the except block is skipped; otherwise, execution jumps to the except section.
+
+Structure:
+try:
+    pass
+except:  # This will catch all exceptions.
+    pass
+# [except Exception as e:
+#     print(e)]  # Saves the exception to variable e
+else:
+    pass
+finally:
+    pass
+
+
+-------------
+Operators.py
+-------------
+Boolean operators are typically used on boolean values. Examples include and, or, not.
+Bitwise operators are typically used on integral values (used to compare integers in their binary format). Examples include ~, |, &, >>, <<
+
+Operator precedence:
+https://www.programiz.com/python-programming/precedence-associativity
+
+Example:
+i = 8
+j = not i & (i - 1)
+assert j is True  # power of 2
+The expression `i & (i - 1)` will be evaluated first since & has higher precedence than not.
+i.e., 1000 & 0111 results in False.
+
+j = not False
+
+j = True
+
+note: to suppress warning messages use -E flag. Example, "python -W ignore::SyntaxWarning Operators.py"
