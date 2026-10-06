@@ -1,0 +1,72 @@
+Iterables:
+- An iterable is an object that you can iterate through.
+- Iterables usually have the property `__getitem__`, indicating the object is indexable.
+
+>>> x = [2, 3, 4]
+>>> hasattr(x, "__iter__")
+True
+>>> hasattr(x, "__getitem__")
+True
+>>> hasattr(x, "__next__")
+False
+
+Iterators vs. Generators:
+- An iterator object has both `__iter__` and `__next__` attributes.
+- You can obtain an iterator from an iterable using the `iter()` function.
+- Generator functions allow you to define a function that behaves like an iterator and can be used in a for loop.
+- Every generator is an iterator.
+
+Using `iter()`:
+>>> x = [2, 3, 4]
+>>> p = iter(x)
+>>> next(p)
+2
+>>> next(p)
+3
+>>> next(p)
+4
+>>> next(p)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+StopIteration
+
+
+Reduce.py:
+---------
+reduce:
+------
+- reduce is a higher order function. it takes a function 
+  as one of its arguments.
+- mul is a function from a module called operator. 
+  You can think of it as a wrapper for the operator '*'.
+- reduce(binary_function, sequence_of_elements[, Seed: base_case_if_seq_is_empty)]
+
+- Note that the initialization is optional. If it's present, 
+  it will be placed before the items of the iterable in the calculations. 
+  if it's not, and the iterable contains one item, it will return this one item.
+
+  reduce_for_range (bf, a, v) demands a be indexable.
+  reduce_for (bf, a, v) does NOT demand a to be indexable. It should only be iterable.
+ 
+  reduce(add,[],0] #0
+  reduce(add,[])
+  error: no initial value
+
+  e.g., reduce(mul, range(1, 4), 1)
+  1*1*2*3
+  e.g., reduce(add, range(1,5), 1) = 1 + 1 + 2 + 3 + 4 
+
+  write the function reduce: reduce(bf, iterable, seed) 
+
+
+- reduce_for_range (bf, a, v) :
+  demands "a" to be indexable
+
+- reduce_for (bf, a, v) :
+  demands "a" to be an iterable
+
+- reduce_while (bf, a, v) :
+  receives an iterable and generates an iterator
+-------------
+
+
