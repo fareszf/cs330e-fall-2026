@@ -1,0 +1,28 @@
+# dict_file.py
+
+1. Create a Dictionary:
+   - A 'person' dictionary is defined with:
+     * name, age
+     * address (nested dictionary)
+     * children (list)
+     * has_car (None)
+
+2. Convert Dictionary to JSON and Save to File:
+   - json.dump(person, file, indent=4)
+   - Writes the dictionary to 'person_to_json.json' in JSON format.
+
+3. Convert Dictionary to JSON String:
+   - json.dumps(person)
+   - Converts the dictionary into a JSON-formatted string.
+
+4. Read JSON from File and Convert Back to Dictionary:
+   - load_json(filename) uses json.load() to read the file and return a dictionary.
+
+5. Assertions:
+   - Checks that data remains consistent after conversion.
+
+# Key Concepts:
+# - Python dictionaries and nested structures
+# - JSON serialization (dump, dumps) and deserialization (load)
+# - File handling in Python
+# - Data integrity checks using assert
